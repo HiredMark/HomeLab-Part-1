@@ -18,13 +18,6 @@ Ok here is the initial plan. I have an oldie laptop. It is not special but it is
 
 Things to include - notes from the learning process.
 
-# Contents
-
-1. [Backup](#Step_1_-_Back_up_Laptop)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
-
 # Step 1 - Back up Laptop
 
 1. SHH into laptop and run timesift - (Note Manjaro doesn't normally come with it.)
@@ -44,3 +37,11 @@ scp -r [USER]@[IP]:[SOURCE] [DESTINATION]
 Things I have discovered - Github doesn't like large files. So I will be backing up the image ot Google Drive instead.
 
 # Step 2 - Get Proxmox on there!
+
+## Getting Started with Proxmox
+
+- Download Proxmox VE ISO - https://www.proxmox.com/en/downloads
+- Download Rufus - https://rufus.ie/en/
+- Delete partition tables from USB stick.
+- Flash Proxmox onto a USB stick and then boot from it.
+- Get ethernet cable and plug it in since proxmox doesn't support wifi easily especially without initial internet connection.

@@ -45,3 +45,17 @@ Things I have discovered - Github doesn't like large files. So I will be backing
 - Delete partition tables from USB stick.
 - Flash Proxmox onto a USB stick and then boot from it.
 - Get ethernet cable and plug it in since proxmox doesn't support wifi easily especially without initial internet connection.
+
+# Step 4 - Spin up servers with Terraform
+
+# Step 5 - Configure things wih Ansible
+
+I am actually going to start practicing Ansible, whilst I wait for a suitable cale to arrive / get my hand in a working enough order to deal with hardware.
+
+## Practice run!
+
+### 1. Set up VMs to administer.
+
+- Downloaded Lubuntu images - https://www.linuxvmimages.com/images/lubuntu-2104
+- Updated machine and installed OpenSSH
+- set VirtualBox adaptor to bridged to allow IPs to be unique.

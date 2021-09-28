@@ -59,3 +59,6 @@ I am actually going to start practicing Ansible, whilst I wait for a suitable ca
 - Downloaded Lubuntu images - https://www.linuxvmimages.com/images/lubuntu-2104
 - Updated machine and installed OpenSSH
 - set VirtualBox adaptor to bridged to allow IPs to be unique.
+
+Tadaaaaaaaaaaaa
+![Vbox environments](Documentation/Images/Ansible-lab.png "All my VMs")

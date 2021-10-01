@@ -46,6 +46,71 @@ Things I have discovered - Github doesn't like large files. So I will be backing
 - Flash Proxmox onto a USB stick and then boot from it.
 - Get ethernet cable and plug it in since proxmox doesn't support wifi easily especially without initial internet connection.
 
+## Connection and Initial SetUp
+
+- After install https into the IP you set in installation at port 8006
+- Once logged in you can see the main interface.
+
+![Proxmox Interface](Documentation/Images/Proxmox-interface.png "Proxmox Interface")
+
+- Be sure to update the server. In this case I disabled the proxmox repositories and just use the debian ones.
+
+![Proxmox Remote update](Documentation/Images/Proxmox-remote-update.png "Remote update")
+
+- Upload Ubuntu server 21.04 image
+
+  ![Proxmox Upload image](Documentation/Images/Proxmox-uploadISO.png "Proxmox Images")
+
+- Create a VM and ssh into it.
+
+  ![Proxmox Create VM](Documentation/Images/Proxmox-CreateVM.png "Proxmox Interface")
+
+- Install QEMU agent and apache2
+
+  ![Apache](Documentation/Images/Proxmox-apache2.png "SUCCESS")
+
+## Create template for later use
+
+### CleanUp
+
+We are going to use cloud-init's features to ensure the machine is unique in every instance.
+
+- Remove SSH keys.
+
+![Remove SSH Keys](Documentation/Images/Template-removeSSHkeys.png "Remove SSH Keys")
+
+- Remove machineid and make sure its other reference is just a link.
+
+![Remove ID](Documentation/Images/Template-removeid.png "Remove ID")
+
+![Ensure this file is just a link](Documentation/Images/Template-ensurelink.png "This file must be a link")
+
+- Clean repos and unnecessary packages.
+
+![Clean the Repositories](Documentation/Images/Template-cleanrepo.png "Clean the repositories")
+
+- Unplug ISO image drive
+
+![Unplug Installation Media](Documentation/Images/Template-unplugISO.png "Unplug Installation media")
+
+### Configure and create
+
+- Create cloudinit drive.
+
+![Remove SSH Keys](Documentation/Images/Template-cloudinit.png "Remove SSH Keys")
+
+- Adjust settings.
+
+![Adjust  Settings](Documentation/Images/Template-cloudinit-settings.png "Adjust cloudinit settings")
+
+- Create template.
+
+![Create Template](Documentation/Images/Template-create.png "Create Template")
+
+- Clone future instances from template.
+
+![Clone](Documentation/Images/Template-clone.png "Clone")
+
 # Step 4 - Spin up servers with Terraform
 
 # Step 5 - Configure things wih Ansible
@@ -61,4 +126,9 @@ I am actually going to start practicing Ansible, whilst I wait for a suitable ca
 - set VirtualBox adaptor to bridged to allow IPs to be unique.
 
 Tadaaaaaaaaaaaa
-![Vbox environments](Documentation/Images/Ansible-lab.png "All my VMs")
+![Vbox environments](Documentation/Images/Ansible-array.png "All my VMs")
+
+- the Workstation VM is the master.
+- install openssh-server on all themachines
+- set up SSH keys between master and cluster machines.
+- use ssh-keygen and ssh-copy-id to set it all up.
